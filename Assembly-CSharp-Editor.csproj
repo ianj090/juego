@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\MoveSceneViewCamera.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
@@ -88,7 +87,6 @@
      <Compile Include="Assets\PostProcessing\Editor\Utils\EditorResources.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Utils\FxStyles.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/Ian Jenatz/Documents/Marro/Computer_Science_programs/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

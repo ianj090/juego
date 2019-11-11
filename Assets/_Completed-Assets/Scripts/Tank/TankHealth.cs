@@ -15,6 +15,8 @@ namespace Complete
         public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
         public GameObject m_ExplosionPrefab;                // A prefab that will be instantiated in Awake, then used whenever the tank dies.
         public Text winText;
+        public Text name1;
+        public Text name2;
 
 
         private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
@@ -38,12 +40,25 @@ namespace Complete
 
         private void OnEnable()
         {
+            if (m_PlayerNumber == 1)
+            {
+                Debug.Log("Player 1 Message");
+                name1.text = "Player 1";
+            }
+            else if (m_PlayerNumber == 2)
+            {
+                Debug.Log("Player 2 Message");
+                name2.text = "Player 2";
+            }
             // When the tank is enabled, reset the tank's health and whether or not it's dead.
             m_CurrentHealth = m_StartingHealth;
             m_Dead = false;
 
             // Update the health slider's value and color.
             SetHealthUI();
+
+            StartCoroutine(waiter());
+
         }
 
 
@@ -119,6 +134,15 @@ namespace Complete
             yield return new WaitForSeconds(3);
             Debug.Log("changed scene");
             SceneManager.LoadScene(0);
+        }
+
+        IEnumerator waiter()
+        {
+            Debug.Log("waiter() started");
+            yield return new WaitForSeconds(3);
+            Debug.Log("changed texts");
+            name1.text = "";
+            name2.text = "";
         }
     }
 }
